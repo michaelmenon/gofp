@@ -10,8 +10,9 @@ type Reducefunc func(a,b interface{})interface{}
 //type Filter
 
 type fpCollection interface{
-	Map(Mapper) []interface{}
-	Filter() []interface{}
+	Map(Mapper) *collection
+	Filter(Filterfunc) *collection
+	Reduce(interface{},Reducefunc)interface{}
 }
 
 type collection struct{
